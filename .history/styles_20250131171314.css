@@ -1,0 +1,27 @@
+:root {
+    --grid-size: 15;
+    --cell-size: 25px;
+}
+
+#drawing-area {
+    width: calc(var(--grid-size) * var(--cell-size));
+    height: calc(var(--grid-size) * var(--cell-size));
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size), var(--cell-size));
+    grid-template-rows: repeat(var(--grid-size), var(--cell-size));
+    border: 1px solid #000;
+}
+
+.cell {
+    width: var(--cell-size)px;
+    height: var(--cell-size)px;
+    border: 1px solid #ddd;
+}
+
+#color-picker {
+    margin-bottom: 10px;
+}
+
+#clear-button {
+    margin-bottom: 25px;
+}
