@@ -1,0 +1,22 @@
+#drawing-area {
+    width: (30*25)px;
+    height: (30*25)px;
+    display: grid;
+    grid-template-columns: repeat(30, 25px);
+    grid-template-rows: repeat(30, 25px);
+    border: 1px solid #000;
+}
+
+.cell {
+    width: 5px;
+    height: 5px;
+    border: 1px solid #ddd;
+}
+
+#color-picker {
+    margin-bottom: 10px;
+}
+
+#clear-button {
+    margin-bottom: 25px;
+}

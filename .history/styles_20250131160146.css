@@ -1,5 +1,5 @@
 :root {
-    --grid-size: 15;
+    --grid-size: 32;
     --cell-size: 25px;
 }
 
@@ -7,14 +7,14 @@
     width: calc(var(--grid-size) * var(--cell-size));
     height: calc(var(--grid-size) * var(--cell-size));
     display: grid;
-    grid-template-columns: repeat(var(--grid-size), var(--cell-size));
-    grid-template-rows: repeat(var(--grid-size), var(--cell-size));
+    grid-template-columns: repeat(var(--grid-size)px, var(--cell-size));
+    grid-template-rows: repeat((var(--grid-size))px, var(--cell-size));
     border: 1px solid #000;
 }
 
 .cell {
     width: var(--cell-size)px;
-    height: var(--cell-size)px;
+    height: 5px;
     border: 1px solid #ddd;
 }
 

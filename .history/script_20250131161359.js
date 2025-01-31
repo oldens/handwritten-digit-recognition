@@ -22,9 +22,13 @@ function createDrawingArea() {
     }
 }
 
-function drawCell(cell) {
+function drawCell(row, col) {
     const color = colorPicker.value;
-    cell.style.backgroundColor = color;
+    drawingData[row - 1][col - 1] = color;
+    const cell = drawingArea.querySelector(`.cell[style*="grid-column: ${col};"][style*="grid-row: ${row};"]`);
+    if (cell) {
+        cell.style.backgroundColor = color;
+    }
 }
 
 function clearDrawingArea() {
@@ -45,8 +49,11 @@ createDrawingArea();
 let isMouseDown = false;
 
 drawingArea.addEventListener('mousedown', (event) => {
-    isMouseDown = true;
+    console.log(event.target);
+    if (event.button === 0) { // Check if the left mouse button is pressed
+        isMouseDown = true;
         handleMouseEvent(event);
+    }
 });
 
 drawingArea.addEventListener('mousemove', (event) => {
@@ -68,6 +75,8 @@ drawingArea.addEventListener('mouseleave', () => {
 function handleMouseEvent(event) {
     const cell = event.target;
     if (cell.classList.contains('cell')) {
-        drawCell(cell);
+        const row = Math.floor(cell.offsetTop / cellSize) + 1;
+        const col = Math.floor(cell.offsetLeft / cellSize) + 1;
+        drawCell(row, col);
     }
 }

@@ -1,5 +1,5 @@
 :root {
-    --grid-size: 15;
+    --grid-size: 16;
     --cell-size: 25px;
 }
 
@@ -13,8 +13,8 @@
 }
 
 .cell {
-    width: var(--cell-size)px;
-    height: var(--cell-size)px;
+    width: 5px;
+    height: 5px;
     border: 1px solid #ddd;
 }
 

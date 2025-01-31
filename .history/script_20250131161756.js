@@ -68,6 +68,8 @@ drawingArea.addEventListener('mouseleave', () => {
 function handleMouseEvent(event) {
     const cell = event.target;
     if (cell.classList.contains('cell')) {
-        drawCell(cell);
+        const row = Math.floor(cell.offsetTop / cellSize) + 1;
+        const col = Math.floor(cell.offsetLeft / cellSize) + 1;
+        drawCell(row, col);
     }
 }
