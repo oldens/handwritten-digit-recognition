@@ -9,7 +9,6 @@ class DrawingBoard {
         this.numCols = this.numRows;
         this.cellSize = parseInt(rootStyles.getPropertyValue('--cell-size'), 10);
 
-        this.drawingData = new Map(); // Store painted cells
         this.isMouseDown = false;
 
         this.setupDrawingArea();
@@ -34,19 +33,17 @@ class DrawingBoard {
     drawCell(cell) {
         const color = this.colorPicker.value;
         cell.style.backgroundColor = color;
-        this.drawingData.set(cell, color); // Store painted color
     }
 
     clearDrawingArea() {
         requestAnimationFrame(() => {
-            this.drawingData.clear(); // Clear map
             this.drawingArea.querySelectorAll('.cell').forEach(cell => cell.style.backgroundColor = '');
         });
     }
 
     handleMouseEvent(event) {
         const cell = event.target;
-        if (cell.classList.contains('cell') && !this.drawingData.get(cell)) {
+        if (cell.classList.contains('cell')) {
             this.drawCell(cell);
         }
     }
