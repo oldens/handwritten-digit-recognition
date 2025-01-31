@@ -62,7 +62,23 @@ class DrawingBoard {
 
         document.addEventListener('mouseup', () => (this.isMouseDown = false));
     }
+
+    updateProgressBars(recognitionResults) {
+        for (let i = 0; i <= 9; i++) {
+            const progressBar = document.getElementById(`progress-${i}`);
+            if (progressBar) {
+                progressBar.value = recognitionResults[i] || 0;
+            }
+        }
+    }
+
+    recognizeDigits() {
+        // Placeholder for digit recognition logic
+        const recognitionResults = Array(10).fill(0).map(() => Math.random());
+        this.updateProgressBars(recognitionResults);
+    }
 }
 
 // Initialize the optimized drawing board
-new DrawingBoard();
+const drawingBoard = new DrawingBoard();
+drawingBoard.recognizeDigits();
