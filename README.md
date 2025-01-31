@@ -1,2 +1,1 @@
-# handwritten-digit-recognition
-A repository for a handwritten digit recognition project
+This repository is empty. Any task executed on it should be considered a new capability and needs to be created.
