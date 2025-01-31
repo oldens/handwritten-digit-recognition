@@ -13,8 +13,6 @@
 }
 
 .cell {
-    width: var(--cell-size)px;
-    height: var(--cell-size)px;
     border: 1px solid #ddd;
 }
 
@@ -24,4 +22,8 @@
 
 #clear-button {
     margin-bottom: 25px;
+}
+
+h1 {
+    margin-bottom: 20px;
 }
